@@ -16,23 +16,24 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      email: '',
-      authenticatedUserName: ''
-    };
-  },
-
-  methods: {
-    logMeIn() {
-      this.authenticatedUserName = this.email;
-      this.email = '';
+  import "milligram";
+  export default {
+    data() {
+      return {
+        email: '',
+        authenticatedUserName: ''
+      };
     },
-    logMeOut() {
-      this.authenticatedUserName = '';
+
+    methods: {
+      logMeIn() {
+        this.authenticatedUserName = this.email;
+        this.email = '';
+      },
+      logMeOut() {
+        this.authenticatedUserName = '';
+      }
     }
-  }
 }
 </script>
 
