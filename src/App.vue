@@ -7,9 +7,7 @@
       <a href="#" @click="logMeOut()">Wyloguj</a>
     </div>
     <div v-else>
-      Zaloguj się e-mailem
-      <input type="email" v-model="email"/>
-      <button @click="logMeIn()">Wchodzę</button>
+      <login-form @login="logMeIn($event)"></login-form>
     </div>
 
   </div>
@@ -17,18 +15,20 @@
 
 <script>
   import "milligram";
+  import LoginForm from "./LoginForm";
+
   export default {
+    components: {LoginForm},
+
     data() {
       return {
-        email: '',
         authenticatedUserName: ''
       };
     },
 
     methods: {
-      logMeIn() {
-        this.authenticatedUserName = this.email;
-        this.email = '';
+      logMeIn(username) {
+        this.authenticatedUserName = username;
       },
       logMeOut() {
         this.authenticatedUserName = '';
