@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Witaj w systemie do zapisów na zajęcia</h1>
+    <h1>System do zapisów na zajęcia</h1>
 
     <div v-if="authenticatedUserName">
       <user-panel :authenticated-user-name="authenticatedUserName" @logout="logMeOut()"></user-panel>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>Witaj {{ authenticatedUserName }}!</h3>
-        <a href="#" @click="logMeOut()">Wyloguj</a>
+        <button class="button button-outline" @click="logMeOut()">Wyloguj</button>
     </div>
 </template>
 
@@ -18,5 +18,11 @@
 </script>
 
 <style scoped>
+    h3 {
+        display: inline;
+    }
 
+    button {
+        float: right;
+    }
 </style>
