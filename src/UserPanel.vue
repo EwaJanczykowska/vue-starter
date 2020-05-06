@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="user-panel">
         <h3>Witaj {{ authenticatedUserName }}!</h3>
         <button class="button button-outline" @click="logMeOut()">Wyloguj</button>
     </div>
@@ -24,5 +24,9 @@
 
     button {
         float: right;
+    }
+
+    #user-panel {
+        padding-bottom: 30px;
     }
 </style>
