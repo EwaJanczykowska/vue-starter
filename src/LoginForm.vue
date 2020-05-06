@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<label>Zaloguj się e-mailem</label>
-		<input type="email" v-model="email">
+		<input type="email" v-model="typedEmail">
 		<button @click="enter()">{{ buttonLabelToDisplay }}</button>
 	</div>
 </template>
@@ -11,12 +11,12 @@
         props: ['buttonLabel'],
         data() {
             return {
-                email: ''
+                typedEmail: ''
             }
         },
         methods: {
             enter() {
-                this.$emit('login', this.email);
+                this.$emit('login', this.typedEmail);
             }
         },
         /*mounted() {
