@@ -21,6 +21,7 @@
         methods: {
             addNewMeeting(meeting) {
                 this.meetings.push(meeting);
+                this.showNewMeetingForm = false;
             },
             displayNewMeetingForm() {
                 this.showNewMeetingForm = true;
