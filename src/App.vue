@@ -8,7 +8,8 @@
     <div v-else>
       <login-form @login="logMeIn($event)"></login-form>
     </div>
-    <meetings-page v-show="authenticatedUserName"></meetings-page>
+    <meetings-page v-show="authenticatedUserName" :user="authenticatedUserName"></meetings-page>
+
   </div>
 </template>
 
