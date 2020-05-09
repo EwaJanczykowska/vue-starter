@@ -2,8 +2,10 @@
     <div>
         <new-meeting-form v-if="showNewMeetingForm" @added="addNewMeeting($event)"></new-meeting-form>
         <button v-else @click="displayNewMeetingForm">Dodaj nowe spotkanie</button>
-        <meetings-list :meetings="meetings" :username="user" @enrollToMeeting="addUserToMeeting($event)"
-                       @delete="deleteMeeting($event)"></meetings-list>
+        <meetings-list :meetings="meetings" :username="user"
+                       @enrollToMeeting="addUserToMeeting($event)"
+                       @delete="deleteMeeting($event)"
+                       @leaveMeeting="removeUserFromMeeting($event)"></meetings-list>
     </div>
 </template>
 
@@ -33,6 +35,9 @@
             },
             deleteMeeting(meeting) {
                 this.meetings.splice(this.meetings.indexOf(meeting), 1);
+            },
+            removeUserFromMeeting(meeting) {
+                meeting.participants.splice(meeting.participants.indexOf(this.user), 1)
             }
         }
     }
